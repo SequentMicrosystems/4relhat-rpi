@@ -17,10 +17,10 @@
 
 const int relayGpio[RELAY_CH_NR_MAX] =
 {
-	24,
-	25,
+	22,
 	23,
-	22};
+	25,
+	24};
 
 static void doHelp(int argc, char *argv[]);
 const CliCmdType CMD_HELP =
