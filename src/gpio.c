@@ -42,24 +42,6 @@ static int GPIOExport(int pin)
 	return (0);
 }
 
-static int GPIOUnexport(int pin)
-{
-	char buffer[BUFFER_MAX];
-	ssize_t bytes_written;
-	int fd;
-
-	fd = open("/sys/class/gpio/unexport", O_WRONLY);
-	if (-1 == fd)
-	{
-		fprintf(stderr, "Failed to open unexport for writing!\n");
-		return (-1);
-	}
-
-	bytes_written = snprintf(buffer, BUFFER_MAX, "%d", pin);
-	write(fd, buffer, bytes_written);
-	close(fd);
-	return (0);
-}
 
 static int GPIODirection(int pin, int dir)
 {
